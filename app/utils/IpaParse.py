@@ -109,6 +109,12 @@ class IpaParse(object):
         
     def version(self):
         self._check()
+        if 'CFBundleShortVersionString' in self.plist_info_list:
+            return self.plist_info_list['CFBundleShortVersionString']
+        return ''
+
+    def build(self):
+        self._check()
         if 'CFBundleVersion' in self.plist_info_list:
             return self.plist_info_list['CFBundleVersion']
         return ''

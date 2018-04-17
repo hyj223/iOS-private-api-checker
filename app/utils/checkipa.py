@@ -653,10 +653,15 @@ class ParseIPA(object):
         return ''
         
     def version(self):
+        if 'CFBundleShortVersionString' in self.info_plist_data:
+            return self.info_plist_data['CFBundleShortVersionString']
+        return ''
+
+    def build(self):
         if 'CFBundleVersion' in self.info_plist_data:
             return self.info_plist_data['CFBundleVersion']
         return ''
-    
+
     def icon_file_name(self):
         if 'CFBundleIcons' in self.info_plist_data and \
             'CFBundlePrimaryIcon' in self.info_plist_data["CFBundleIcons"] and \
@@ -752,6 +757,7 @@ def process_ipa(ipa_filename):
     #infomation
     check_result['name'] = parse.app_name()
     check_result['version'] = parse.version()
+    check_result['build'] = parse.build()
     check_result['bundle_id'] = parse.bundle_identifier()
     check_result['tar_version'] = parse.target_os_version()
     check_result['min_version'] = parse.minimum_os_version()

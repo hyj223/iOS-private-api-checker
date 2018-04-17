@@ -16,7 +16,6 @@ import iOS_private
 def index_page():
     return flask.render_template('main/index_page.html')
 
-
 allow_ext = ['ipa']
 #ipa上传
 @app.route('/ipa_post', methods=['POST'])
@@ -31,7 +30,7 @@ def ipa_post():
         #文件后缀名不对时，不做存储处理
         if not suffix_name in allow_ext:
             rst['success'] = 0
-            rst['success'] = 'file ext is not allowed'
+            rst['data'] = 'file ext is not allowed'
         else:
             #为图片名称添加时间戳，防止不同文件同名
             fname = pid + '.' + suffix_name
@@ -43,11 +42,6 @@ def ipa_post():
             rsts = iOS_private.check_app_info_and_provision(ipa_path)
             for key in rsts.keys():
                 rst['data'][key] = rsts[key]
-            # ipa_parse = IpaParse.IpaParse(ipa_path)
-            # rst['data']['version'] = ipa_parse.version()
-            # rst['data']['bundle_identifier'] = ipa_parse.bundle_identifier()
-            # rst['data']['target_os_version'] = ipa_parse.target_os_version()
-            # rst['data']['minimum_os_version'] = ipa_parse.minimum_os_version()
             #检查ios私有api
             app = iOS_private.get_executable_path(ipa_path, pid)
             print 'app', app
@@ -70,7 +64,6 @@ def ipa_post():
     dest_tmp = os.path.join(cur_dir, 'tmp/' + pid)
     if os.path.exists(dest_tmp):
         shutil.rmtree(dest_tmp)
-    #print rst
     return OtherUtil.object_2_dict(rst)
 
 #定义404页面
@@ -81,7 +74,6 @@ def page_not_found(error):
 @app.errorhandler(502)
 def server_502_error(error):
     return '502'
-
 
 @app.route('/not_allow', methods=['GET'])
 def deny(error):

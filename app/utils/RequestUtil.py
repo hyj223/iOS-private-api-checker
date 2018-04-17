@@ -32,5 +32,4 @@ def get_request_ua(request):
     return request.headers.get('User-Agent', '')
 
 def get_request_accept_lang(request):
-    request.environ.get('HTTP_ACCEPT_LANGUAGE', '')
-    
+    return request.environ.get('HTTP_ACCEPT_LANGUAGE', '')

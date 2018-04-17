@@ -12,6 +12,7 @@ from db import api_dbs
 # from app.utils import IpaParse
 from app.utils import checkipa
 
+#解压并获取IPA中二进制文件路径（解压到项目目录/tmp/pid/Payload/）
 def get_executable_path(ipa_path, pid):
     '''
     info: unzip ipa, get execute app path
@@ -212,7 +213,7 @@ if __name__ == '__main__':
     excel_path = os.path.join(cwd, 'tmp/' + utils.get_unique_str() + '.xlsx')
     # excel_path = os.path.join(cwd, 'tmp/test.xlsx') # for test
     print excel_path
-    ipa_folder = '/Users/netease/Downloads/ipas/mg/'
+    ipa_folder = '/Users/HTC/Downloads/ipas'
     # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/Mobile Applications/'
     # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/'
     print batch_check(ipa_folder, excel_path)

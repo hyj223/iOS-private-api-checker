@@ -8,7 +8,7 @@ from flask import Flask
 
 app = Flask(__name__)
 app.secret_key = 'your_session_key_ab_test'
-app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024 #上传的最大文件为1024M
 
 db_config = {
     'DB_USER': 'dev',
@@ -28,5 +28,6 @@ redis_config = {
     'TEMP_DB': 1, #缓存db
     'RECORD_DB': 2 #用户访问db
 }
+
 
 from app.views import main_views
