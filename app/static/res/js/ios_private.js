@@ -10,8 +10,11 @@ var myDropzone = new Dropzone("#ipa_file", {
 			//显示app信息
 			$('#app_name').text(data.data.name);
 			$('#app_version').text(data.data.version);
-			$('#app_build').text(data.data.build);
+			$('#app_build_version').text(data.data.build_version);
 			$('#bundle_identifier').text(data.data.bundle_id);
+			$('#device_family').text(data.data.device_family);
+			$('#ipa_filesize').text(data.data.ipa_filesize);
+			$('#development_region').text(data.data.development_region);
 			$('#target_os_version').text(data.data.tar_version);
 			$('#minimum_os_version').text(data.data.min_version);
 			//显示ipa的架构信息

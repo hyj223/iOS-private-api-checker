@@ -26,7 +26,7 @@ def ipa_post():
     try:
         upload_file = request.files['file']
         fname = secure_filename(upload_file.filename)
-        suffix_name = fname.split('.')[-1]
+        suffix_name = fname.split('.')[-1] #以.分隔最后的字符串
         #文件后缀名不对时，不做存储处理
         if not suffix_name in allow_ext:
             rst['success'] = 0
@@ -34,8 +34,8 @@ def ipa_post():
         else:
             #为图片名称添加时间戳，防止不同文件同名
             fname = pid + '.' + suffix_name
-            ipa_path = os.path.join(PathUtil.upload_dir(), fname)
-            upload_file.save(ipa_path)
+            ipa_path = os.path.join(PathUtil.upload_dir(), fname) #路径拼接
+            upload_file.save(ipa_path) #保存上传的文件
             rst['success'] = 1
             rst['data'] = {}
             #获得ipa信息
@@ -51,7 +51,10 @@ def ipa_post():
             #检查ipa 64支持情况
             arcs = iOS_private.check_architectures(app)
             rst['data']['arcs'] = arcs
-            
+            #包文件大小
+            ipa_filesize = StringUtil.file_size(ipa_path)
+            rst['data']['ipa_filesize'] = str(ipa_filesize)
+
     except Exception, e:
         print e
         rst['success'] = 0

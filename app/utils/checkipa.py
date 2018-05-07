@@ -631,15 +631,36 @@ class ParseIPA(object):
             print(str(ex))
 
     def app_name(self):
+        #
         if 'CFBundleDisplayName' in self.info_plist_data:
             return self.info_plist_data['CFBundleDisplayName']
         elif 'CFBundleName' in self.info_plist_data:
             return self.info_plist_data['CFBundleName']
         return ''
+
+    def version(self):
+        if 'CFBundleShortVersionString' in self.info_plist_data:
+            return self.info_plist_data['CFBundleShortVersionString']
+        return ''
+
+    def build_version(self):
+        if 'CFBundleVersion' in self.info_plist_data:
+            return self.info_plist_data['CFBundleVersion']
+        return ''
     
     def bundle_identifier(self):
         if 'CFBundleIdentifier' in self.info_plist_data:
             return self.info_plist_data['CFBundleIdentifier']
+        return ''
+
+    def device_family(self):
+        if 'UIDeviceFamily' in self.info_plist_data:
+            return ','.join(str(x) for x in self.info_plist_data['UIDeviceFamily'])
+        return []
+
+    def development_region(self):
+        if 'CFBundleDevelopmentRegion' in self.info_plist_data:
+            return self.info_plist_data['CFBundleDevelopmentRegion']
         return ''
     
     def target_os_version(self):
@@ -650,16 +671,6 @@ class ParseIPA(object):
     def minimum_os_version(self):
         if 'MinimumOSVersion' in self.info_plist_data:
             return re.findall('[\d\.]*', self.info_plist_data['MinimumOSVersion'])[0]
-        return ''
-        
-    def version(self):
-        if 'CFBundleShortVersionString' in self.info_plist_data:
-            return self.info_plist_data['CFBundleShortVersionString']
-        return ''
-
-    def build(self):
-        if 'CFBundleVersion' in self.info_plist_data:
-            return self.info_plist_data['CFBundleVersion']
         return ''
 
     def icon_file_name(self):
@@ -757,8 +768,11 @@ def process_ipa(ipa_filename):
     #infomation
     check_result['name'] = parse.app_name()
     check_result['version'] = parse.version()
-    check_result['build'] = parse.build()
+    check_result['build_version'] = parse.build_version()
     check_result['bundle_id'] = parse.bundle_identifier()
+    check_result['device_family'] = parse.device_family()
+    check_result['development_region'] = parse.development_region()
+
     check_result['tar_version'] = parse.target_os_version()
     check_result['min_version'] = parse.minimum_os_version()
 
