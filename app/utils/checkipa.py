@@ -655,7 +655,7 @@ class ParseIPA(object):
 
     def device_family(self):
         if 'UIDeviceFamily' in self.info_plist_data:
-            return ','.join(str(x) for x in self.info_plist_data['UIDeviceFamily'])
+            return self.info_plist_data['UIDeviceFamily']
         return []
 
     def development_region(self):
