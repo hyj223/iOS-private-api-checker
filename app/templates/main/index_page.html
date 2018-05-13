@@ -33,7 +33,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab is-active">Home</a>
+          <a href="#overview" class="mdl-layout__tab is-active">iOS预审</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
         </div>
       </header>
@@ -50,35 +50,48 @@
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <ul class="toc">
                 <a href="#">App Name: <span id="app_name"></span></a>
-                <a href="#">App Version: <span id="app_version"></span></a>
-                <a href="#">App Build Version: <span id="app_build_version"></span></a>
-                <a href="#">Bundle identifier: <span id="bundle_identifier"></span></a>
-                <a href="#">Device Family: <span id="device_family"></span></a>
-                <a href="#">api Filesize: <span id="ipa_filesize"></span></a>
-                <a href="#">Development Region: <span id="development_region"></span></a>
-                <a href="#">Target os version: <span id="target_os_version"></span></a>
-                <a href="#">Minimum os version: <span id="minimum_os_version"></span></a>
-                <a href="#">App Architectures: <span id="app_arcs"></span></a>
-                <a href="#">Profile Type: <span id="profile_type"></span></a>
-                <a href="#">Expiration Date: <span id="expiration"></span></a>
+<!--                 <a href="#">App Version: <span id="app_version"></span></a> -->
+<!--                 <a href="#">App Build Version: <span id="app_build_version"></span></a> -->
+<!--                 <a href="#">Bundle identifier: <span id="bundle_identifier"></span></a> -->
+<!--                 <a href="#">Device Family: <span id="device_family"></span></a> -->
+<!--                 <a href="#">api Filesize: <span id="ipa_filesize"></span></a> -->
+<!--                 <a href="#">Development Region: <span id="development_region"></span></a> -->
+<!--                 <a href="#">Target os version: <span id="target_os_version"></span></a> -->
+<!--                 <a href="#">Minimum os version: <span id="minimum_os_version"></span></a> -->
+<!--                 <a href="#">App Architectures: <span id="app_arcs"></span></a> -->
+<!--                 <a href="#">Profile Type: <span id="profile_type"></span></a> -->
+<!--                 <a href="#">Expiration Date: <span id="expiration"></span></a> -->
               </ul>
             </div>
           </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="api_in_app">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div id="api_append_div" class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                <h4 class="mdl-cell mdl-cell--12-col">Private API in APP</h4>
-                
+<!--           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="api_in_app"> -->
+<!--             <div class="mdl-card mdl-cell mdl-cell--12-col"> -->
+<!--               <div id="api_append_div" class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing"> -->
+<!--                 <h4 class="mdl-cell mdl-cell--12-col">Private API in APP</h4> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </section> -->
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="iosCheckResult">
+             <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div id="api_append_div" class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                  <h4 class="mdl-cell mdl-cell--12-col">IPA检测结果</h4>
+                </div>
               </div>
-            </div>
-          </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="framework_in_app">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div id="framework_append_div" class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                <h4 class="mdl-cell mdl-cell--12-col">Private Framework in APP</h4>
-                
+              <div id="checkInfoList_table">
+                <table class="table table-center table-blue iosErrorTable" id="checkInfoList">
+                  <thead>
+                      <tr>
+                        <th>编号</th>
+                        <th>测试结果</th>
+                        <th>检查项</th>
+                        <th>原始值</th>
+                        <th>备注</th>
+                      </tr>
+                  </thead>
+                	<tbody>
+                  </tbody>
+                </table>
               </div>
-            </div>
           </section>
         </div>
         <div class="mdl-layout__tab-panel" id="features">

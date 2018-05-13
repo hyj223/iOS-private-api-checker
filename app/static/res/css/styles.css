@@ -105,7 +105,7 @@ html, body {
   margin-bottom: 48px;
 }
 .mdl-demo section.section--center {
-  max-width: 860px;
+  max-width: 1024px;
 }
 .mdl-demo #features section.section--center {
   max-width: 620px;
@@ -116,7 +116,7 @@ html, body {
   justify-content: center;
 }
 .mdl-demo section > .section__play-btn {
-  min-height: 200px;
+  min-height: 50px;
 }
 .mdl-demo section > header > .material-icons {
   font-size: 3rem;
