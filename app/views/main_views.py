@@ -40,18 +40,20 @@ def ipa_post():
             rsts = iOS_private.check_app_info_and_provision(ipa_path)
             for key in rsts.keys():
                 rst[key] = rsts[key]
-            #检查ios私有api
+            #解压并获取IPA中二进制文件路径
             app = iOS_private.get_executable_path(ipa_path, pid)
             print 'app', app
-            methods_in_app, methods_not_in_app, private = iOS_private.check_private_api(app, pid)
-            rst['methods_in_app'] = methods_in_app
-            rst['private_framework'] = list(private)
+            #检查ios私有api
+            # methods_in_app, methods_not_in_app, private = iOS_private.check_private_api(app, pid)
+            # rst['methods_in_app'] = methods_in_app
+            # rst['private_framework'] = list(private)
             #检查ipa 64支持情况
             arcs = iOS_private.check_architectures(app)
             rst['arcs'] = arcs
             #包文件大小
             ipa_filesize = StringUtil.file_size(ipa_path)
             rst['ipa_filesize'] = str(ipa_filesize)
+
             #解读数据，审核结果分析
             reviewResult = EGKReviewResultUtil.handleReviewResult(rst)
             reviewResult['success'] = 1

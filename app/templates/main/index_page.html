@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>iOS私有api检查</title>
+    <title>EfunGameKit</title>
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <!-- Add to homescreen for Safari on iOS -->
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/static/res/css/styles.css">
     <style type="text/css">
     	#ipa_file {
-			 border: 2px solid rgb(66,158,158);
+       border: 2px solid rgb(107, 164, 245);
 			 width: 100%;
 		  }
       #overview section {
@@ -42,7 +42,7 @@
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <form action="#" class="dropzone dz-clickable" id="ipa_file" method="post" enctype="multipart/form-data">
 				      <div class="dz-message" >Drop files here or click to upload.<br>
-					       <span class="note">(文件拖放到这里或者点击选择ipa文件 <strong>检查iOS私有api使用情况</strong>)</span>
+					       <span class="note">(文件拖放到这里或者点击选择ipa文件 <strong>检查ipa包情况</strong>)</span>
       				</div>
       			</form>
           </section>
@@ -77,15 +77,15 @@
                   <h4 class="mdl-cell mdl-cell--12-col">IPA检测结果</h4>
                 </div>
               </div>
-              <div id="checkInfoList_table">
-                <table class="table table-center table-blue iosErrorTable" id="checkInfoList">
+<div class="mdl-card mdl-cell mdl-cell--12-col" id="checkInfoList_table">
+                <table class="mdl-data-table mdl-js-data-table" id="checkInfoList">
                   <thead>
                       <tr>
                         <th>编号</th>
-                        <th>测试结果</th>
-                        <th>检查项</th>
+<th class="mdl-data-table__cell--non-numeric">测试结果</th>
+<th class="mdl-data-table__cell--non-numeric">检查项</th>
                         <th>原始值</th>
-                        <th>备注</th>
+<th class="mdl-data-table__cell--non-numeric">备注</th>
                       </tr>
                   </thead>
                 	<tbody>
