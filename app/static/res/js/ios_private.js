@@ -9,9 +9,9 @@ var myDropzone = new Dropzone("#ipa_file", {
 		if (data.success == 1) {
 			//显示app信息
 			$('#app_name').text(data.name);
-//			$('#app_version').text(data.version.originResult);
+			// $('#app_version').text(version);
 //			$('#app_build_version').text(data.build_version.originResult);
-//			$('#bundle_identifier').text(data.bundle_id.originResult);
+			// $('#bundle_identifier').text(data.bundle_id.originResult);
 //			$('#device_family').text(data.device_family.reviewResult);
 //			$('#ipa_filesize').text(data.ipa_filesize);
 //			$('#development_region').text(data.development_region.originResult);
@@ -32,13 +32,34 @@ var myDropzone = new Dropzone("#ipa_file", {
 //                $('#api_append_div').append(html);
 //			};
 			$("#checkInfoList tbody").html("");
+			var checkListHTML = '';
 			for (var i = 0; i < data.checkResult.length; i++) {
 				var result = data.checkResult[i];
+				console.log(result)
 				var tr = '<tr><td>' + (i + 1) + '</td><td>' +  result.status + '</td><td>' + result.reviewItem + '</td><td>'
 				  + result.originResult + '</td><td>' + result.reviewResult + '</td></tr>';
-				console.log(tr);
-                $('#checkInfoList tbody').append(tr);
+				// console.log(tr);
+				checkListHTML += tr;
+				// $('#checkInfoList tbody').append(tr);
+				
+				var versionStr = result['version'];
+				if (typeof versionStr === "string") {
+					$('#app_version').text(result.originResult);
+				}
+
+				var build_versionStr = result['build_version'];
+				if (typeof build_versionStr === "string") {
+					build_version = $('#app_version').text() + '(' + result.originResult + ')';
+					$('#app_version').text(build_version)
+				}
+
+				var bundle_idStr = result['bundle_id'];
+				if (typeof bundle_idStr === "string") {
+					$('#bundle_identifier').text(result.originResult);
+				}
+				
 			};
+			$('#checkInfoList tbody').append(checkListHTML);
 		}
 		else {
 			alert(data.message);

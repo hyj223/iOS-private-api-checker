@@ -75,7 +75,7 @@ html, body {
 }
 .mdl-demo.mdl-demo .mdl-card__supporting-text h4 {
   margin-top: 0;
-  margin-bottom: 5px 20px;
+  margin-bottom: 0px;
 }
 .mdl-demo .mdl-card__actions {
   margin: 0;
@@ -106,7 +106,7 @@ html, body {
   margin-bottom: 48px;
 }
 .mdl-demo section.section--center {
-  max-width: 1920px;
+  max-width: 1600px;
 }
 .mdl-demo #features section.section--center {
   max-width: 620px;
@@ -206,4 +206,17 @@ html, body {
 }
 .mdl-demo .mdl-menu__container {
   z-index: 99;
+}
+
+.mdl-data-table th {
+  background: #c4d1da;
+   text-align: left
+}
+
+
+.mdl-data-table td {
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
 }
