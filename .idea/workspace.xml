@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b2658a9-70c2-44d8-a8b7-b1b58bfb2190" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/res/css/material.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/res/css/material.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/res/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/res/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/res/js/ios_private.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/res/js/ios_private.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/main/index_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/main/index_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/main_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_private.py" beforeDir="false" afterPath="$PROJECT_DIR$/iOS_private.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/iOS_private_api_checker$iOS_private_api_checker.coverage" NAME="iOS-private-api-checker Coverage Results" MODIFIED="1527588804421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/iOS_private_api_checker$iOS_private_api_checker.coverage" NAME="iOS-private-api-checker Coverage Results" MODIFIED="1527768645447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/iOS_private_api_checker$build_api_db.coverage" NAME="build_api_db Coverage Results" MODIFIED="1523434008470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -45,8 +47,8 @@
       <file leaf-file-name="main_views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/main_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="332">
+              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
               <folding>
                 <element signature="e#60#79#0" expanded="true" />
               </folding>
@@ -54,11 +56,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="material.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/res/js/material.min.js">
+      <file leaf-file-name="StringUtil.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/utils/StringUtil.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="7" column="1170" selection-start-line="7" selection-start-column="1170" selection-end-line="7" selection-end-column="1170" />
+            <state relative-caret-position="395">
+              <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PathUtil.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/utils/PathUtil.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="16" column="46" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -66,8 +77,8 @@
       <file leaf-file-name="iOS_private.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iOS_private.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="444">
+              <caret line="90" column="27" lean-forward="true" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
               <folding>
                 <element signature="e#80#97#0" expanded="true" />
               </folding>
@@ -75,11 +86,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="checkipa.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/utils/checkipa.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8740">
+              <caret line="468" column="9" selection-start-line="468" selection-start-column="9" selection-end-line="468" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="app_utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/app_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2907">
-              <caret line="159" column="19" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="19" />
+            <state relative-caret-position="137">
+              <caret line="156" column="13" lean-forward="true" selection-start-line="156" selection-start-column="13" selection-end-line="156" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -87,53 +107,8 @@
       <file leaf-file-name="EGKReviewResultUtil.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/utils/EGKReviewResultUtil.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1463">
+            <state relative-caret-position="709">
               <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/main/index_page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ios_private.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/res/js/ios_private.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dropzone.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/res/css/dropzone.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="material.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/res/css/material.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/res/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2109">
-              <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -203,7 +178,6 @@
         <option value="$PROJECT_DIR$/app/static/res/js/dropzone.js" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/72ecb07b-e651-412a-a728-1c1b1b063055/console.sql" />
         <option value="$PROJECT_DIR$/run_web.py" />
-        <option value="$PROJECT_DIR$/iOS_private.py" />
         <option value="$PROJECT_DIR$/app/utils/StringUtil.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8b10e7bb-a42d-4db1-b9ac-c28e9afcc3d1/console.sql" />
         <option value="$PROJECT_DIR$/app/utils/EGKAnalyticalUtil.py" />
@@ -217,6 +191,7 @@
         <option value="$PROJECT_DIR$/app/static/res/js/ios_private.js" />
         <option value="$PROJECT_DIR$/app/utils/EGKReviewResultUtil.py" />
         <option value="$PROJECT_DIR$/app/static/res/css/material.min.css" />
+        <option value="$PROJECT_DIR$/iOS_private.py" />
         <option value="$PROJECT_DIR$/app/views/main_views.py" />
       </list>
     </option>
@@ -392,32 +367,45 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32824427" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3293348" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29791668" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.1632653" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.61950547" visible="true" weight="0.16111414" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.240625" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.115625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.61950547" visible="true" weight="0.1627526" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="6" weight="0.20914215" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32932824" />
       <window_info id="Structure" order="1" sideWeight="0.3804945" side_tool="true" weight="0.16604011" />
       <window_info id="Favorites" order="2" sideWeight="0.3804945" side_tool="true" weight="0.16604011" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5430108" />
-      <window_info anchor="right" id="R Packages" order="5" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.31354168" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
-    </layout>
-    <layout-to-restore>
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5430108" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.61950547" visible="true" weight="0.16111414" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.32932824" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32824427" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32824427" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29791668" />
+      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info id="Structure" order="1" sideWeight="0.3804945" side_tool="true" weight="0.16604011" />
+      <window_info anchor="right" id="Database" order="6" weight="0.20914215" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.125" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.3804945" side_tool="true" weight="0.16604011" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.31354168" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.1632653" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3293348" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32824427" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.61950547" visible="true" weight="0.16604011" />
       <window_info id="Structure" order="1" sideWeight="0.3804945" side_tool="true" weight="0.16604011" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -426,17 +414,18 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2172043" />
       <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.1080786" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.1632653" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.12540895" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32824427" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32932824" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.31354168" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="6" weight="0.20972146" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3293348" />
+      <window_info id="Favorites" order="2" sideWeight="0.3804945" side_tool="true" weight="0.16604011" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,13 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
@@ -664,20 +646,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b10e7bb-a42d-4db1-b9ac-c28e9afcc3d1/console.sql" />
-    <entry file="file://$PROJECT_DIR$/app/utils/PathUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/utils/StringUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/utils/EGKOrder.py" />
     <entry file="file://$PROJECT_DIR$/app/utils/Testpy.py" />
     <entry file="file://$PROJECT_DIR$/app/utils/DateUtil.py">
@@ -717,13 +685,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/python_stubs/-584901171/__builtin__.py" />
-    <entry file="file://$PROJECT_DIR$/app/utils/checkipa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8721">
-          <caret line="468" column="9" selection-start-line="468" selection-start-column="9" selection-end-line="468" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/res/img/RAEDME.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -734,29 +695,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/res/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2109">
-          <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
+        <state relative-caret-position="2422">
+          <caret line="194" column="1" lean-forward="true" selection-start-line="194" selection-start-column="1" selection-end-line="194" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/res/css/material.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-951">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/res/css/dropzone.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/main/index_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/app_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="159" column="19" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="19" />
+        <state relative-caret-position="285">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -767,41 +721,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/main/index_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/utils/EGKReviewResultUtil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
+        <state relative-caret-position="709">
           <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/res/css/material.min.css">
+    <entry file="file://$PROJECT_DIR$/app/static/res/js/material.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="114">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utils/checkipa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8740">
+          <caret line="468" column="9" selection-start-line="468" selection-start-column="9" selection-end-line="468" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/iOS_private.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="444">
+          <caret line="90" column="27" lean-forward="true" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
           <folding>
             <element signature="e#80#97#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/res/js/material.min.js">
+    <entry file="file://$PROJECT_DIR$/api/app_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="7" column="1170" selection-start-line="7" selection-start-column="1170" selection-end-line="7" selection-end-column="1170" />
+        <state relative-caret-position="137">
+          <caret line="156" column="13" lean-forward="true" selection-start-line="156" selection-start-column="13" selection-end-line="156" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utils/StringUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utils/PathUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="332">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="e#60#79#0" expanded="true" />
           </folding>

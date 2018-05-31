@@ -19,17 +19,6 @@
   <link rel="stylesheet" href="/static/res/css/material.min.css">
   <link rel="stylesheet" href="/static/res/css/dropzone.min.css">
   <link rel="stylesheet" href="/static/res/css/styles.css">
-  <style type="text/css">
-    #ipa_file {
-      border: 2px solid rgb(107, 164, 245);
-      width: 100%;
-    }
-
-    #overview section {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  </style>
 </head>
 
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
@@ -37,7 +26,7 @@
     <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
         <a href="#overview" class="mdl-layout__tab is-active">iOS预审</a>
-        <a href="#features" class="mdl-layout__tab">FAQ</a>
+        <!-- <a href="#features" class="mdl-layout__tab">FAQ</a> -->
       </div>
     </header>
     <main class="mdl-layout__content">
@@ -64,7 +53,7 @@
                 <span id="bundle_identifier"></span>
               </a>
               <!--                 <a href="#">App Build Version: <span id="app_build_version"></span></a> -->
-                              
+
               <!--                 <a href="#">Device Family: <span id="device_family"></span></a> -->
               <!--                 <a href="#">api Filesize: <span id="ipa_filesize"></span></a> -->
               <!--                 <a href="#">Development Region: <span id="development_region"></span></a> -->
@@ -74,15 +63,14 @@
               <!--                 <a href="#">Profile Type: <span id="profile_type"></span></a> -->
               <!--                 <a href="#">Expiration Date: <span id="expiration"></span></a> -->
             </ul>
+            <dev class="mdl-grid">
+              <a href="/downloadiOSCheck">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="downloadExcel_iOSCheck">下载IPA检测报告</button>
+              </a>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="sendEmail_iOSCheck">发送检测报告到邮箱</button>
+            </dev>
           </div>
         </section>
-                  <!-- <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="api_in_app">
-                    <div class="mdl-card mdl-cell mdl-cell--12-col">
-                      <div id="api_append_div" class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                        <h4 class="mdl-cell mdl-cell--12-col">Private API in APP</h4>
-                      </div>
-                    </div>
-                  </section> -->
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="iosCheckResult">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div id="api_append_div" class="mdl-card__supporting-text">
@@ -95,9 +83,9 @@
                 <tr>
                   <th style="width:50px;">编号</th>
                   <th style="width:50px;">测试结果</th>
-                  <th class="mdl-data-table__cell--non-numeric" style="width:200px;" >检查项</th>
-                  <th class="mdl-data-table__cell--non-numeric" style="width:200px;" >原始值</th>
-                  <th class="mdl-data-table__cell--non-numeric">备注</th>
+                  <th style="width:200px;">检查项</th>
+                  <th style="width:200px;">原始值</th>
+                  <th >备注</th>
                 </tr>
               </thead>
               <tbody>
@@ -106,7 +94,7 @@
           </div>
         </section>
       </div>
-      <div class="mdl-layout__tab-panel" id="features">
+      <!-- <div class="mdl-layout__tab-panel" id="features">
         <section class="section--center mdl-grid mdl-grid--no-spacing">
           <div class="mdl-cell mdl-cell--12-col">
             <h4>FAQ</h4>
@@ -156,7 +144,7 @@
             <p>3. 请暂时暂mac上运行，linux上暂时没有找到合适的、代替otool的工具，求推荐^^!</p>
           </div>
         </section>
-      </div>
+      </div> -->
       <footer class="mdl-mega-footer">
         <div class="mdl-mega-footer--bottom-section">
           <div class="mdl-logo">

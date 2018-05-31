@@ -8,6 +8,7 @@ from app import app
 from app.utils import StringUtil, PathUtil, OtherUtil, EGKReviewResultUtil
 import flask
 from flask.globals import request
+from flask import send_file
 from werkzeug.utils import secure_filename
 import os, shutil
 import iOS_private
@@ -86,3 +87,16 @@ def server_502_error(error):
 @app.route('/not_allow', methods=['GET'])
 def deny(error):
     return 'You IP address is not in white list...'
+
+
+@app.route('/downloadiOSCheck') # this is a job for GET, not POST
+def download_excel():
+    directory = os.getcwd()  # 假设在当前目录
+    # print directory
+    tempath = directory + '/tmp/20180531175704552752.xlsx'
+
+
+    return send_file(tempath,
+                     mimetype='text/xlsx',
+                     attachment_filename='iOSResult.xlsx',
+                     as_attachment=True)

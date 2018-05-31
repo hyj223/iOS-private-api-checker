@@ -213,7 +213,7 @@ if __name__ == '__main__':
     excel_path = os.path.join(cwd, 'tmp/' + utils.get_unique_str() + '.xlsx')
     # excel_path = os.path.join(cwd, 'tmp/test.xlsx') # for test
     print excel_path
-    ipa_folder = '/Users/HTC/Downloads/ipas'
+    ipa_folder = '/Users/efun/Downloads/ipas'
     # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/Mobile Applications/'
     # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/'
     print batch_check(ipa_folder, excel_path)

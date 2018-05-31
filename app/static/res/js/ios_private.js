@@ -66,3 +66,13 @@ var myDropzone = new Dropzone("#ipa_file", {
 		}
 	}
 });
+
+
+// $("#downloadExcel_iOSCheck").click(function () {
+// 	console.log('下载excel报告')
+// });
+
+
+$("#sendEmail_iOSCheck").click(function () {
+	console.log("发送邮件成功")
+});

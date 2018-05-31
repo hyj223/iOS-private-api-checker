@@ -213,10 +213,33 @@ html, body {
    text-align: left
 }
 
-
 .mdl-data-table td {
   text-align: left;
   word-wrap: break-word;
   word-break: break-all;
   white-space: normal;
+}
+
+.mdl-button {
+  margin: 0 10px 10px 10px;
+  color: #fff;
+  background-color: #4b92f6;
+}
+
+.mdl-button:hover {
+  color: #4b92f6
+}
+
+.mdl-grid {
+  margin: 0
+}
+
+#ipa_file {
+  border: 2px solid rgb(107, 164, 245);
+  width: 100%;
+}
+
+#overview section {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
