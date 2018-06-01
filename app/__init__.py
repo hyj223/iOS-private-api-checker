@@ -8,7 +8,7 @@ from flask import Flask
 
 app = Flask(__name__)
 app.secret_key = 'your_session_key_ab_test'
-app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024 #上传的最大文件为1024M
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024 * 2  #上传的最大文件为2048M
 
 db_config = {
     'DB_USER': 'dev',

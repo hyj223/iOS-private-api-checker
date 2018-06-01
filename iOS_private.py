@@ -11,6 +11,7 @@ from api import app_utils, api_utils
 from db import api_dbs
 # from app.utils import IpaParse
 from app.utils import checkipa
+from app.utils import PathUtil
 
 #解压并获取IPA中二进制文件路径（解压到项目目录/tmp/pid/Payload/）
 def get_executable_path(ipa_path, pid):
@@ -176,7 +177,31 @@ def batch_check(app_folder, excel_path):
     report_utils.excel_report(check_results, excel_path)
     return excel_path
 
+def export_excel_report(ipa_list):
+    cwd = os.getcwd()
+    excel_path = os.path.join(cwd, 'tmp/' + utils.get_unique_str() + '.xlsx')
+    ipa_folder = PathUtil.upload_dir()
+    check_results = []
+
+    for ipa in ipa_list:
+        if ipa.endswith('.ipa'):
+            ipa_path = os.path.join(ipa_folder, ipa)
+            # 单个app的检查结果
+            try:
+                r = check_ipa(ipa_path)
+                if r:
+                    check_results.append(r)
+            except Exception, e:
+                print e
+                continue
+
+    # 将结果转化成excel报告
+    report_utils.excel_report(check_results, excel_path)
+    return excel_path
+
+
 if __name__ == '__main__':
+    pass
     #######
     #check one app
     # ipa_path = "/Users/summer-wj/code/svn/ljsg_for_netease_20150928_resign.ipa"
@@ -209,14 +234,14 @@ if __name__ == '__main__':
 
     ##########
     #test batch check ipa
-    cwd = os.getcwd()
-    excel_path = os.path.join(cwd, 'tmp/' + utils.get_unique_str() + '.xlsx')
-    # excel_path = os.path.join(cwd, 'tmp/test.xlsx') # for test
-    print excel_path
-    ipa_folder = '/Users/efun/Downloads/ipas'
-    # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/Mobile Applications/'
-    # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/'
-    print batch_check(ipa_folder, excel_path)
+    # cwd = os.getcwd()
+    # excel_path = os.path.join(cwd, 'tmp/' + utils.get_unique_str() + '.xlsx')
+    # # excel_path = os.path.join(cwd, 'tmp/test.xlsx') # for test
+    # print excel_path
+    # ipa_folder = '/Users/efun/Downloads/ipas'
+    # # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/Mobile Applications/'
+    # # ipa_folder = '/Users/netease/Music/iTunes/iTunes Media/'
+    # print batch_check(ipa_folder, excel_path)
 
     #########
     #test check arcs

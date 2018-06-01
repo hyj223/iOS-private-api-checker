@@ -33,10 +33,9 @@
       <div class="mdl-layout__tab-panel is-active" id="overview">
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <form action="#" class="dropzone dz-clickable" id="ipa_file" method="post" enctype="multipart/form-data">
-            <div class="dz-message">Drop files here or click to upload.
-              <br>
-              <span class="note">(文件拖放到这里或者点击选择ipa文件
-                <strong>检查ipa包情况</strong>)</span>
+            <div class="dz-message">
+              <span class="add-icon"></span>
+              <p class="note">点击或拖拽上传 IPA</p>
             </div>
           </form>
         </section>
@@ -64,9 +63,7 @@
               <!--                 <a href="#">Expiration Date: <span id="expiration"></span></a> -->
             </ul>
             <dev class="mdl-grid">
-              <a href="/downloadiOSCheck">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="downloadExcel_iOSCheck">下载IPA检测报告</button>
-              </a>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="downloadExcel_iOSCheck">下载IPA检测报告</button>
               <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="sendEmail_iOSCheck">发送检测报告到邮箱</button>
             </dev>
           </div>

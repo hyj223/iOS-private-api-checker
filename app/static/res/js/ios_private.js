@@ -3,17 +3,23 @@ var myDropzone = new Dropzone("#ipa_file", {
 	url: "/ipa_post",
 	maxFilesize: 2048,
 	acceptedFiles: '.ipa',
-	maxFiles: 5,
-	success: function(d, data) {
+	addRemoveLinks: true,
+	dictRemoveFile: "删除",
+	dictCancelUpload: '取消上传',
+	dictCancelUploadConfirmation: '确定要取消上传这个IPA包吗？',
+	maxFiles: 10,
+	success: function(file, data) {
 		data = JSON.parse(data);
 		if (data.success == 1) {
+			// 记录文件名字，用于删除或导出操作
+			file.ipaName = data.ipaName;
 			//显示app信息
 			$('#app_name').text(data.name);
 			// $('#app_version').text(version);
 //			$('#app_build_version').text(data.build_version.originResult);
 			// $('#bundle_identifier').text(data.bundle_id.originResult);
 //			$('#device_family').text(data.device_family.reviewResult);
-//			$('#ipa_filesize').text(data.ipa_filesize);
+//			$('#ipa_filesize').text(data.ipaFilesize);
 //			$('#development_region').text(data.development_region.originResult);
 //			$('#target_os_version').text(data.tar_version.reviewResult);
 //			$('#minimum_os_version').text(data.min_version.reviewResult);
@@ -35,7 +41,7 @@ var myDropzone = new Dropzone("#ipa_file", {
 			var checkListHTML = '';
 			for (var i = 0; i < data.checkResult.length; i++) {
 				var result = data.checkResult[i];
-				console.log(result)
+				// console.log(result)
 				var tr = '<tr><td>' + (i + 1) + '</td><td>' +  result.status + '</td><td>' + result.reviewItem + '</td><td>'
 				  + result.originResult + '</td><td>' + result.reviewResult + '</td></tr>';
 				// console.log(tr);
@@ -64,13 +70,54 @@ var myDropzone = new Dropzone("#ipa_file", {
 		else {
 			alert(data.message);
 		}
+	},
+	removedfile: function (file) {
+		var href = '/deleteIpaFile/' + file.ipaName;
+		$.get(href);
+		var _ref;
+		return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
 	}
 });
 
 
-// $("#downloadExcel_iOSCheck").click(function () {
-// 	console.log('下载excel报告')
-// });
+$("#downloadExcel_iOSCheck").click(function () {
+	// 获取全部的ipa包名字，然后处理下载文件
+	ipaList = myDropzone.files;
+	if (ipaList.length) {
+		var ipas = '';
+		for(index in ipaList) {
+			ipa = ipaList[index];
+			ipaName = ipa.ipaName;
+			// if (typeof (ipaName) !== 'undefined') {
+				ipas += ipa.ipaName
+			// }
+		}
+
+		console.log(ipas);
+
+		if (ipas.length) {
+			var href = '/downloadiOSCheck/' + ipas;
+			$.get(href, '', function (data) {
+				console.log(typeof(data));
+				//判断返回值不是 json 格式
+				if (!data.match("^\{(.+:.+,*){1,}\}$")) {
+					alert("Data: " + data + "\nStatus: " + status);
+				}
+				else {
+					alert('excel !');
+				}
+				
+				// data = JSON.parse(data);
+				// if (data.success == 0) {
+				// 	alert(data.message);
+				// }
+			});
+			return;
+		}
+	}
+
+	alert('请先上传IPA包！');
+});
 
 
 $("#sendEmail_iOSCheck").click(function () {

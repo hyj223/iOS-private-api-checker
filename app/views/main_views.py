@@ -33,10 +33,12 @@ def ipa_post():
             rst['success'] = 0
             rst['message'] = 'file ext is not allowed'
         else:
-            #为图片名称添加时间戳，防止不同文件同名
+            #为ipa文件名称添加时间戳，防止不同文件同名
             fname = pid + '.' + suffix_name
             ipa_path = os.path.join(PathUtil.upload_dir(), fname) #路径拼接
             upload_file.save(ipa_path) #保存上传的文件
+            rst['ipaName'] = fname
+
             #获得ipa信息
             rsts = iOS_private.check_app_info_and_provision(ipa_path)
             for key in rsts.keys():
@@ -53,7 +55,7 @@ def ipa_post():
             rst['arcs'] = arcs
             #包文件大小
             ipa_filesize = StringUtil.file_size(ipa_path)
-            rst['ipa_filesize'] = str(ipa_filesize)
+            rst['ipaFilesize'] = str(ipa_filesize)
 
             #解读数据，审核结果分析
             reviewResult = EGKReviewResultUtil.handleReviewResult(rst)
@@ -65,9 +67,10 @@ def ipa_post():
         print e
         rst['success'] = 0
         rst['message'] = '检查失败，也许上传的包并非真正的ipa，或者系统出现错误！'
-    
-    if ipa_path and os.path.exists(ipa_path):
-        os.remove(ipa_path) #删除上传的包
+
+    # 删除上传的包
+    # if ipa_path and os.path.exists(ipa_path):
+    #     os.remove(ipa_path)
 
     cur_dir = os.getcwd() #删除检查临时目录
     dest_tmp = os.path.join(cur_dir, 'tmp/' + pid)
@@ -88,15 +91,27 @@ def server_502_error(error):
 def deny(error):
     return 'You IP address is not in white list...'
 
+@app.route('/deleteIpaFile/<fileName>')
+def delectIpa(fileName):
+    print  fileName
+    ipa_path = os.path.join(PathUtil.upload_dir(), fileName)  # 路径拼接
+    if ipa_path and os.path.exists(ipa_path):
+        os.remove(ipa_path)
+        return '200'
+    else:
+        return '404'
 
-@app.route('/downloadiOSCheck') # this is a job for GET, not POST
-def download_excel():
-    directory = os.getcwd()  # 假设在当前目录
-    # print directory
-    tempath = directory + '/tmp/20180531175704552752.xlsx'
+@app.route('/downloadiOSCheck/<filelist>') # this is a job for GET, not POST
+def download_excel(filelist):
+    ipa_list = filelist.split(',')
+    excel_path = iOS_private.export_excel_report(ipa_list)
+    filename = StringUtil.get_unique_str() + '.xlsx'
 
+    if not os.path.exists(excel_path):
+        print '导出excel表失败'
+        return OtherUtil.object_2_dict({'success':0, 'message':'导出excel表失败，请重试！'})
 
-    return send_file(tempath,
-                     mimetype='text/xlsx',
-                     attachment_filename='iOSResult.xlsx',
+    return send_file(excel_path,
+                     mimetype='application/vnd.ms-excel',
+                     attachment_filename= filename,
                      as_attachment=True)
