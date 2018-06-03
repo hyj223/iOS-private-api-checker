@@ -88,29 +88,23 @@ $("#downloadExcel_iOSCheck").click(function () {
 		for(index in ipaList) {
 			ipa = ipaList[index];
 			ipaName = ipa.ipaName;
-			// if (typeof (ipaName) !== 'undefined') {
+			if (typeof (ipaName) !== 'undefined') {
 				ipas += ipa.ipaName
-			// }
+			}
 		}
 
-		console.log(ipas);
-
 		if (ipas.length) {
-			var href = '/downloadiOSCheck/' + ipas;
-			$.get(href, '', function (data) {
-				console.log(typeof(data));
-				//判断返回值不是 json 格式
-				if (!data.match("^\{(.+:.+,*){1,}\}$")) {
-					alert("Data: " + data + "\nStatus: " + status);
+			var url = '/checkiOSReport/' + ipas;
+			$.get(url, '', function (data, status) {
+				console.log('status: ' + status);
+				data = JSON.parse(data);
+				if (data.success == 1) {
+					var href = '/downloadiOSReport/' + data.url;
+					window.location.href = href;
 				}
 				else {
-					alert('excel !');
+					alert(data.message);
 				}
-				
-				// data = JSON.parse(data);
-				// if (data.success == 0) {
-				// 	alert(data.message);
-				// }
 			});
 			return;
 		}
@@ -122,4 +116,5 @@ $("#downloadExcel_iOSCheck").click(function () {
 
 $("#sendEmail_iOSCheck").click(function () {
 	console.log("发送邮件成功")
+	$("#div_email").show();
 });

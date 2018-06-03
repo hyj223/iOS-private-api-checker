@@ -16,6 +16,9 @@ def log_dir():
 def default_tmp_dir():
     return _cur_file_dir() + '/app/static/tmp/'
 
+def excel_dir():
+    return _cur_file_dir() + '/tmp/'
+
 def _cur_file_dir():
     #获取脚本路径
     path = sys.path[0]

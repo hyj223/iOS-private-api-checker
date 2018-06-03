@@ -88,6 +88,7 @@ def server_502_error(error):
     return '502'
 
 @app.route('/not_allow', methods=['GET'])
+
 def deny(error):
     return 'You IP address is not in white list...'
 
@@ -101,17 +102,28 @@ def delectIpa(fileName):
     else:
         return '404'
 
-@app.route('/downloadiOSCheck/<filelist>') # this is a job for GET, not POST
-def download_excel(filelist):
+@app.route('/checkiOSReport/<filelist>') # this is a job for GET, not POST
+def check_iOS(filelist):
     ipa_list = filelist.split(',')
     excel_path = iOS_private.export_excel_report(ipa_list)
-    filename = StringUtil.get_unique_str() + '.xlsx'
 
     if not os.path.exists(excel_path):
         print '导出excel表失败'
         return OtherUtil.object_2_dict({'success':0, 'message':'导出excel表失败，请重试！'})
 
+    file_name = os.path.basename(excel_path)
+    return OtherUtil.object_2_dict({'success': 1, 'message': '导出excel表成功！', 'url': file_name})
+
+
+@app.route('/downloadiOSReport/<fileName>')
+def download_excel(fileName):
+    excel_dir = PathUtil.excel_dir()
+    excel_path = os.path.join(excel_dir + fileName)
+
+    if not os.path.exists(excel_path):
+        print excel_path
+
     return send_file(excel_path,
                      mimetype='application/vnd.ms-excel',
-                     attachment_filename= filename,
+                     attachment_filename= fileName,
                      as_attachment=True)

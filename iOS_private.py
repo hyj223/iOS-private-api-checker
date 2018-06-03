@@ -178,8 +178,8 @@ def batch_check(app_folder, excel_path):
     return excel_path
 
 def export_excel_report(ipa_list):
-    cwd = os.getcwd()
-    excel_path = os.path.join(cwd, 'tmp/' + utils.get_unique_str() + '.xlsx')
+    excel_dir = PathUtil.excel_dir()
+    excel_path = os.path.join(excel_dir + utils.get_unique_str() + '.xlsx')
     ipa_folder = PathUtil.upload_dir()
     check_results = []
 
