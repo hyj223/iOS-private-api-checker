@@ -57,6 +57,8 @@ def ipa_post():
             ipa_filesize = StringUtil.file_size(ipa_path)
             rst['ipaFilesize'] = str(ipa_filesize)
 
+            print  rst
+
             #解读数据，审核结果分析
             reviewResult = EGKReviewResultUtil.handleReviewResult(rst)
             reviewResult['success'] = 1

@@ -234,6 +234,7 @@ html, body {
   margin: 0
 }
 
+/* 上传框 */
 #ipa_file {
   border: 2px solid rgb(107, 164, 245);
   width: 100%;
@@ -275,11 +276,43 @@ html, body {
   margin-top: -1px
 }
 
+/* 邮箱地址 */
 #div_email {
   padding-top: 5px;
-
 }
 
 .mdl-textfield__label {
   top: 0px;
 }
+
+.mdl-textfield {
+  padding-left: 40px;
+}
+
+/* Json内容 */
+pre {
+  outline: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.string {
+  color: green;
+}
+
+.number {
+  color: darkorange;
+}
+
+.boolean {
+  color: blue;
+}
+
+.null {
+  color: magenta;
+}
+
+.key {
+  color: red;
+}
+

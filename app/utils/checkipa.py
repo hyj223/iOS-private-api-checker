@@ -780,6 +780,10 @@ def process_ipa(ipa_filename):
     check_result['profile_type'] = parse.distribution_profile_type()
     check_result['provisioned_devices'] = parse.provisioned_devices()
 
+    # more info
+    check_result['info_plist'] = parse.info_plist_data
+    # check_result['mobile_provision'] = parse.provision_data
+
     #warning and error
     check_result['warning'] = []
     check_result['error'] = []

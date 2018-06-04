@@ -1,3 +1,4 @@
+
 Dropzone.autoDiscover = false;
 var myDropzone = new Dropzone("#ipa_file", {
 	url: "/ipa_post",
@@ -11,6 +12,8 @@ var myDropzone = new Dropzone("#ipa_file", {
 	success: function(file, data) {
 		data = JSON.parse(data);
 		if (data.success == 1) {
+
+			console.log(data)
 			// 记录文件名字，用于删除或导出操作
 			file.ipaName = data.ipaName;
 			//显示app信息
@@ -37,6 +40,8 @@ var myDropzone = new Dropzone("#ipa_file", {
 //                '</div>';
 //                $('#api_append_div').append(html);
 //			};
+
+			// IPA检测结果
 			$("#checkInfoList tbody").html("");
 			var checkListHTML = '';
 			for (var i = 0; i < data.checkResult.length; i++) {
@@ -66,6 +71,11 @@ var myDropzone = new Dropzone("#ipa_file", {
 				
 			};
 			$('#checkInfoList tbody').append(checkListHTML);
+
+			// Info.plist内容
+			var info_plist = data.info_plist;
+			$('#info_plist_json').html(syntaxHighlight(info_plist));
+
 		}
 		else {
 			alert(data.message);
@@ -116,5 +126,37 @@ $("#downloadExcel_iOSCheck").click(function () {
 
 $("#sendEmail_iOSCheck").click(function () {
 	console.log("发送邮件成功")
-	$("#div_email").show();
+	$("#div_email").show('2000');
 });
+
+$("#switch_info_plist").click(function (event) {
+	if (this.checked) {
+		//开
+		$("#info_plist_view").show('2000');
+	} else {
+		$("#info_plist_view").hide('2000');
+	}
+});
+
+// Json格式化 链接： https: //www.jianshu.com/p/04127d74d88c
+function syntaxHighlight(json) {
+	if (typeof json != 'string') {
+		json = JSON.stringify(json, undefined, 2);
+	}
+	json = json.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
+	return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+		var cls = 'number';
+		if (/^"/.test(match)) {
+			if (/:$/.test(match)) {
+				cls = 'key';
+			} else {
+				cls = 'string';
+			}
+		} else if (/true|false/.test(match)) {
+			cls = 'boolean';
+		} else if (/null/.test(match)) {
+			cls = 'null';
+		}
+		return '<span class="' + cls + '">' + match + '</span>';
+	});
+}
