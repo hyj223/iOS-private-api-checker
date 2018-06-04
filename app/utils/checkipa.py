@@ -782,7 +782,9 @@ def process_ipa(ipa_filename):
 
     # more info
     check_result['info_plist'] = parse.info_plist_data
-    # check_result['mobile_provision'] = parse.provision_data
+    check_result['mobile_provision'] = parse.provision_data
+    # 因DeveloperCertificates为data无法转换为json，所以置空
+    check_result['mobile_provision']['DeveloperCertificates'] = ''
 
     #warning and error
     check_result['warning'] = []

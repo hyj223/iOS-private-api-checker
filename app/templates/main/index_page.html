@@ -94,18 +94,33 @@
             </table>
           </div>
         </section>
-        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="iosCheckResult">
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ios_info_plist_list">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div id="api_append_div" class="mdl-card__supporting-text">
               <h4>Info.plist 内容</h4><p></p>
               <label for="switch_info_plist" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
-                <input type="checkbox" id="switch_info_plist" class="mdl-switch__input" checked>
+                <input type="checkbox" id="switch_info_plist" class="mdl-switch__input">
                 <span class="mdl-switch__label">显示详细内容</span>
               </label>
             </div>
           </div>
-          <div class="mdl-card mdl-cell mdl-cell--12-col" id="info_plist_view">
+          <div class="mdl-card mdl-cell mdl-cell--12-col" id="info_plist_view" style="display: none;">
             <pre id="info_plist_json">
+            </pre>
+          </div>
+        </section>
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="mobile_provision_list">
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div id="api_append_div" class="mdl-card__supporting-text">
+              <h4>证书内容</h4><p></p>
+              <label for="switch_mobile_provision" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+                <input type="checkbox" id="switch_mobile_provision" class="mdl-switch__input">
+                <span class="mdl-switch__label">显示详细内容</span>
+              </label>
+            </div>
+          </div>
+          <div class="mdl-card mdl-cell mdl-cell--12-col" id="mobile_provision_view" style="display: none;">
+            <pre id="mobile_provision_json">
             </pre>
           </div>
         </section>

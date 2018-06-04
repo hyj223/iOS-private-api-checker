@@ -13,7 +13,6 @@ var myDropzone = new Dropzone("#ipa_file", {
 		data = JSON.parse(data);
 		if (data.success == 1) {
 
-			console.log(data)
 			// 记录文件名字，用于删除或导出操作
 			file.ipaName = data.ipaName;
 			//显示app信息
@@ -76,6 +75,10 @@ var myDropzone = new Dropzone("#ipa_file", {
 			var info_plist = data.info_plist;
 			$('#info_plist_json').html(syntaxHighlight(info_plist));
 
+			// mobileprovision内容
+			var mobile_provision = data.mobile_provision;
+			$('#mobile_provision_json').html(syntaxHighlight(mobile_provision));
+
 		}
 		else {
 			alert(data.message);
@@ -135,6 +138,15 @@ $("#switch_info_plist").click(function (event) {
 		$("#info_plist_view").show('2000');
 	} else {
 		$("#info_plist_view").hide('2000');
+	}
+});
+
+$("#switch_mobile_provision").click(function (event) {
+	if (this.checked) {
+		//开
+		$("#mobile_provision_view").show('2000');
+	} else {
+		$("#mobile_provision_view").hide('2000');
 	}
 });
 
