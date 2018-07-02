@@ -40,7 +40,10 @@
 
  - 网页检查展示
 
-![web_screenshot](screenshot/web_screenshot.png)
+![web_screenshot](screenshot/web_screenshot1.png)
+![web_screenshot](screenshot/web_screenshot2.png)
+![web_screenshot](screenshot/web_screenshot3.png)
+![web_screenshot](screenshot/web_screenshot4.png)
 
  - 批量检测生成excel报告概要
 
